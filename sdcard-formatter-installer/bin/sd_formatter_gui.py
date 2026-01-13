@@ -170,27 +170,6 @@ class SDFormatter(Gtk.Window):
         if os.path.exists(icon_path):
             self.set_icon_from_file(icon_path)
 
-        # Check if format_sd exists
-        if not self.check_format_sd():
-            dialog = FirstRunDialog(self)
-            response = dialog.run()
-            dialog.destroy()
-            
-            if response != Gtk.ResponseType.OK or not self.check_format_sd():
-                error_dialog = Gtk.MessageDialog(
-                    transient_for=self,
-                    flags=0,
-                    message_type=Gtk.MessageType.ERROR,
-                    buttons=Gtk.ButtonsType.OK,
-                    text="Cannot continue without format_sd",
-                )
-                error_dialog.format_secondary_text(
-                    "The application cannot function without the format_sd binary."
-                )
-                error_dialog.run()
-                error_dialog.destroy()
-                sys.exit(1)
-
         # GUI Layout
         grid = Gtk.Grid()
         grid.set_column_spacing(10)
@@ -362,6 +341,40 @@ class SDFormatter(Gtk.Window):
             self.output_label.set_text(f"⚠️ Exception: {e}")
             print("DEBUG ERROR:", e)
 
+def show_first_run_dialog_if_needed():
+    """Check and show first-run dialog if format_sd is missing"""
+    paths = [
+        os.path.expanduser("~/.sd/format_sd"),
+        "/usr/local/bin/format_sd"
+    ]
+    
+    format_sd_exists = any(os.path.exists(p) and os.access(p, os.X_OK) for p in paths)
+    
+    if not format_sd_exists:
+        dialog = FirstRunDialog(None)
+        response = dialog.run()
+        dialog.destroy()
+        
+        # Check again after dialog
+        format_sd_exists = any(os.path.exists(p) and os.access(p, os.X_OK) for p in paths)
+        
+        if response != Gtk.ResponseType.OK or not format_sd_exists:
+            error_dialog = Gtk.MessageDialog(
+                transient_for=None,
+                flags=0,
+                message_type=Gtk.MessageType.ERROR,
+                buttons=Gtk.ButtonsType.OK,
+                text="Cannot continue without format_sd",
+            )
+            error_dialog.format_secondary_text(
+                "The application cannot function without the format_sd binary."
+            )
+            error_dialog.run()
+            error_dialog.destroy()
+            return False
+    
+    return True
+
 if __name__ == "__main__":
     # Check if running as root, if not restart with pkexec
     if False and os.geteuid() != 0:
@@ -372,6 +385,10 @@ if __name__ == "__main__":
         except Exception as e:
             print(f"Failed to elevate privileges: {e}")
             sys.exit(1)
+    
+    # Show first-run dialog before creating main window
+    if not show_first_run_dialog_if_needed():
+        sys.exit(1)
     
     win = SDFormatter()
     win.connect("destroy", Gtk.main_quit)

@@ -33,7 +33,7 @@ jobs:
           
           #### DEB Package
           ```bash
-          sudo dpkg -i sdcard-formatter_1.0.0.deb
+          sudo dpkg -i sdcard-formatter_1.0.5.deb
           sudo apt-get install -f
           ```
           

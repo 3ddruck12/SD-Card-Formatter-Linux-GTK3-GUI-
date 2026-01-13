@@ -3,7 +3,7 @@ set -e
 
 echo "🔧 Building SD Card Formatter DEB Package..."
 
-DEB_DIR="sdcard-formatter_1.0.0"
+DEB_DIR="sdcard-formatter_1.0.5"
 ICON_PATH="../sdcard-formatter-installer/icons/sdcard-formatter.png"
 
 # Copy GUI script
