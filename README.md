@@ -9,6 +9,10 @@
 This project provides a GTK3 front-end for [Tuxera's official SD Card Formatter](https://www.sdcard.org/downloads/sd-memory-card-formatter-for-linux/).  
 > ⚠️ Due to licensing restrictions, you **must manually download** the binary `format_sd`.
 
+**New:** We've added a first-run setup window that simplifies the download process and guides you through the initial setup.
+
+**Available as DEB and Flatpak packages** - Check [Releases](https://github.com/3ddruck12/SD-Card-Formatter-Linux-GTK3-GUI-/releases) for pre-built packages!
+
 ---
 
 ## 🔧 Installation
@@ -41,6 +45,8 @@ chmod +x install.sh
 ## 🖼 Features
 
 - Simple GTK3 interface
+- **First-run setup window** - Guides you through the download and setup process
+- Available as **DEB and Flatpak** packages
 - Lists only removable drives
 - Choose Quick, Discard, or Overwrite format types
 - Confirmation before formatting
