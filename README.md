@@ -19,29 +19,33 @@ This project provides a GTK3 front-end for [Tuxera's official SD Card Formatter]
 
 ### Option 1: DEB Package (Debian/Ubuntu)
 
-1. Download `sdcard-formatter_1.0.0.deb` from [Releases](https://github.com/3ddruck12/SD-Card-Formatter-Linux-GTK3-GUI-/releases)
-2. Install the package:
+Download and install with one command:
 
 ```bash
+wget https://github.com/3ddruck12/SD-Card-Formatter-Linux-GTK3-GUI-/releases/download/v1.0.1/sdcard-formatter_1.0.0.deb
 sudo dpkg -i sdcard-formatter_1.0.0.deb
-sudo apt-get install -f  # Install dependencies if needed
+sudo apt-get install -f
 ```
 
-3. Run from application menu or terminal:
+Or download manually from [Releases](https://github.com/3ddruck12/SD-Card-Formatter-Linux-GTK3-GUI-/releases)
+
+Run from application menu or terminal:
 ```bash
 sd_formatter_gui.py
 ```
 
 ### Option 2: Flatpak (Universal)
 
-1. Download `sdcard-formatter.flatpak` from [Releases](https://github.com/3ddruck12/SD-Card-Formatter-Linux-GTK3-GUI-/releases)
-2. Install the package:
+Download and install with one command:
 
 ```bash
+wget https://github.com/3ddruck12/SD-Card-Formatter-Linux-GTK3-GUI-/releases/download/v1.0.1/sdcard-formatter.flatpak
 flatpak install sdcard-formatter.flatpak
 ```
 
-3. Run the application:
+Or download manually from [Releases](https://github.com/3ddruck12/SD-Card-Formatter-Linux-GTK3-GUI-/releases)
+
+Run the application:
 ```bash
 flatpak run org.sdcard.Formatter
 ```
