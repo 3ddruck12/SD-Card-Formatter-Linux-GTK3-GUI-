@@ -1,0 +1,44 @@
+name: Create Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  create-release:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Create Release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: Release ${{ github.ref }}
+        draft: false
+        prerelease: false
+        body: |
+          ## SD Card Formatter ${{ github.ref_name }}
+          
+          ### Downloads
+          - **DEB Package**: Für Debian/Ubuntu basierte Systeme
+          - **Flatpak**: Universal Linux Package
+          
+          ### Installation
+          
+          #### DEB Package
+          ```bash
+          sudo dpkg -i sdcard-formatter_1.0.0.deb
+          sudo apt-get install -f
+          ```
+          
+          #### Flatpak
+          ```bash
+          flatpak install SDCardFormatter.flatpak
+          flatpak run org.sdcard.Formatter
+          ```

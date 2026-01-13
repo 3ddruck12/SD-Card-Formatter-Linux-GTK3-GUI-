@@ -1,0 +1,51 @@
+name: Build Flatpak
+
+on:
+  push:
+    branches: [ main, master ]
+    tags:
+      - 'v*'
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build-flatpak:
+    runs-on: ubuntu-latest
+    container:
+      image: bilelmoussaoui/flatpak-github-actions:freedesktop-23.08
+      options: --privileged
+      
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Prepare Flatpak files
+      run: |
+        cd sdcard-formatter-flatpak
+        
+        # Copy icon if not present
+        if [ ! -f sdcard-formatter.png ] && [ -f ../sdcard-formatter-installer/icons/sdcard-formatter.png ]; then
+          cp ../sdcard-formatter-installer/icons/sdcard-formatter.png .
+        fi
+        
+    - name: Build Flatpak
+      uses: flatpak/flatpak-github-actions/flatpak-builder@v6
+      with:
+        bundle: SDCardFormatter.flatpak
+        manifest-path: sdcard-formatter-flatpak/org.sdcard.Formatter.yaml
+        cache-key: flatpak-builder-${{ github.sha }}
+        
+    - name: Upload Flatpak artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: sdcard-formatter-flatpak
+        path: SDCardFormatter.flatpak
+        
+    - name: Create Release
+      if: startsWith(github.ref, 'refs/tags/v')
+      uses: softprops/action-gh-release@v1
+      with:
+        files: SDCardFormatter.flatpak
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
