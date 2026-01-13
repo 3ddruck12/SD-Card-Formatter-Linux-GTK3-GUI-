@@ -56,7 +56,9 @@
   
   <content_rating type="oars-1.1"/>
   
-  <developer_name>3ddruck12</developer_name>
+  <developer id="io.github.3ddruck12">
+    <name>3ddruck12</name>
+  </developer>
   
   <update_contact>support_AT_example.com</update_contact>
 </component>
