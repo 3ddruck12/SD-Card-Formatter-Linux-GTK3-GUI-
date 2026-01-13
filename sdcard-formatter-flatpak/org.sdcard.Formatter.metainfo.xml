@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>org.sdcard.Formatter</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0+</project_license>
+  <name>SD Card Formatter</name>
+  <summary>Format SD cards with the official SD Card Formatter tool</summary>
+  
+  <description>
+    <p>
+      A GTK3 graphical interface for Tuxera's official SD Card Formatter for Linux.
+      This tool allows you to format SD cards properly according to SD specifications.
+    </p>
+    <p>
+      Features:
+    </p>
+    <ul>
+      <li>Simple and intuitive GTK3 interface</li>
+      <li>Supports quick and full format options</li>
+      <li>Automatic device detection</li>
+      <li>First-run setup wizard for easy configuration</li>
+    </ul>
+    <p>
+      Note: Due to licensing restrictions, the format_sd binary must be downloaded separately
+      during first run. The application will guide you through this process.
+    </p>
+  </description>
+  
+  <launchable type="desktop-id">org.sdcard.Formatter.desktop</launchable>
+  
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/Stradios/SD-Card-Formatter-Linux-GTK3-GUI-/refs/heads/main/Screenshot%20From%202025-08-04%2022-37-59.png</image>
+      <caption>Main application window</caption>
+    </screenshot>
+  </screenshots>
+  
+  <url type="homepage">https://github.com/3ddruck12/SD-Card-Formatter-Linux-GTK3-GUI-</url>
+  <url type="bugtracker">https://github.com/3ddruck12/SD-Card-Formatter-Linux-GTK3-GUI-/issues</url>
+  
+  <provides>
+    <binary>sd_formatter_gui.py</binary>
+  </provides>
+  
+  <releases>
+    <release version="1.0.5" date="2026-01-13">
+      <description>
+        <p>Bug fixes and improvements</p>
+        <ul>
+          <li>Fixed first-run dialog visibility</li>
+          <li>Improved window management</li>
+        </ul>
+      </description>
+    </release>
+  </releases>
+  
+  <content_rating type="oars-1.1"/>
+  
+  <developer_name>3ddruck12</developer_name>
+  
+  <update_contact>support_AT_example.com</update_contact>
+</component>
