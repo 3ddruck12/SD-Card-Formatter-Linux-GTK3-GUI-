@@ -48,7 +48,7 @@
         <p>Major updates and branding changes</p>
         <ul>
           <li>Updated to Freedesktop SDK 25.08</li>
-          <li>Changed app ID to io.github.3ddruck12.SDCardFormatter</li>
+          <li>Changed app ID to io.github.sdcardformatter.SDCardFormatter</li>
           <li>Added "Unofficial Community Project" branding</li>
           <li>Fixed window size (non-resizable, non-maximizable)</li>
         </ul>
@@ -67,7 +67,7 @@
   
   <content_rating type="oars-1.1"/>
   
-  <developer id="io.github.3ddruck12">
+  <developer id="io.github.sdcardformatter">
     <name>3ddruck12</name>
   </developer>
   
