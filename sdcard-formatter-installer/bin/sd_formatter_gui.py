@@ -17,6 +17,7 @@ class FirstRunDialog(Gtk.Dialog):
         self.add_buttons(Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL)
         
         self.set_default_size(500, 300)
+        self.set_resizable(False)
         self.selected_file = None
         
         box = self.get_content_area()
@@ -161,9 +162,10 @@ class FirstRunDialog(Gtk.Dialog):
 
 class SDFormatter(Gtk.Window):
     def __init__(self):
-        Gtk.Window.__init__(self, title="SD Card Formatter")
+        Gtk.Window.__init__(self, title="SD Card Formatter (Unofficial Community Project)")
         self.set_border_width(10)
         self.set_default_size(420, 320)
+        self.set_resizable(False)
 
         # Set window/taskbar icon
         icon_path = os.path.expanduser("~/.local/share/icons/sdcard-formatter.png")
