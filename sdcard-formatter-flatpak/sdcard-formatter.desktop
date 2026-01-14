@@ -2,7 +2,7 @@
 Name=SD Card Formatter
 Comment=Format SD/USB drives with Tuxera's format_sd
 Exec=/app/bin/sd_formatter_gui.py
-Icon=org.sdcard.Formatter
+Icon=io.github.3ddruck12.SDCardFormatter
 Terminal=false
 Type=Application
 Categories=System;Utility;
@@ -10,4 +10,4 @@ Actions=Uninstall;
 
 [Desktop Action Uninstall]
 Name=Uninstall
-Exec=flatpak uninstall org.sdcard.Formatter
+Exec=flatpak uninstall io.github.3ddruck12.SDCardFormatter

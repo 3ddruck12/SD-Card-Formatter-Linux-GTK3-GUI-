@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop-application">
-  <id>org.sdcard.Formatter</id>
+  <id>io.github.3ddruck12.SDCardFormatter</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0+</project_license>
-  <name>SD Card Formatter</name>
+  <name>SD Card Formatter (Unofficial Community Project)</name>
   <summary>Format SD cards with the official SD Card Formatter tool</summary>
   
   <description>
@@ -26,7 +26,7 @@
     </p>
   </description>
   
-  <launchable type="desktop-id">org.sdcard.Formatter.desktop</launchable>
+  <launchable type="desktop-id">io.github.3ddruck12.SDCardFormatter.desktop</launchable>
   
   <screenshots>
     <screenshot type="default">
@@ -43,6 +43,17 @@
   </provides>
   
   <releases>
+    <release version="1.0.6" date="2026-01-14">
+      <description>
+        <p>Major updates and branding changes</p>
+        <ul>
+          <li>Updated to Freedesktop SDK 25.08</li>
+          <li>Changed app ID to io.github.3ddruck12.SDCardFormatter</li>
+          <li>Added "Unofficial Community Project" branding</li>
+          <li>Fixed window size (non-resizable, non-maximizable)</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.0.5" date="2026-01-13">
       <description>
         <p>Bug fixes and improvements</p>
