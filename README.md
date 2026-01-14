@@ -77,3 +77,5 @@ The **`format_sd` binary is proprietary** and must be downloaded from the offici
 ## 🧊 Author
 
 Developed by [Stradios](https://github.com/Stradios)
+
+and codevelop by 3ddruck12
