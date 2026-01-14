@@ -1,4 +1,4 @@
-# SD Card Formatter (Linux GTK3 GUI)
+# SD Card Formatter (Linux GTK3 GUI) Community Project
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/Stradios/SD-Card-Formatter-Linux-GTK3-GUI-/refs/heads/main/Screenshot%20From%202025-08-04%2022-37-59.png" alt="Screenshot">
