@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop-application">
-  <id>io.github.3ddruck12.SDCardFormatter</id>
+  <id>io.github.sdcardformatter.SDCardFormatter</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0+</project_license>
   <name>SD Card Formatter (Unofficial Community Project)</name>
@@ -26,7 +26,7 @@
     </p>
   </description>
   
-  <launchable type="desktop-id">io.github.3ddruck12.SDCardFormatter.desktop</launchable>
+  <launchable type="desktop-id">io.github.sdcardformatter.SDCardFormatter.desktop</launchable>
   
   <screenshots>
     <screenshot type="default">

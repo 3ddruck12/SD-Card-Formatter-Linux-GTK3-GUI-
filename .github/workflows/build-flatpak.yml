@@ -24,7 +24,7 @@ jobs:
       uses: flatpak/flatpak-github-actions/flatpak-builder@v6
       with:
         bundle: sdcard-formatter.flatpak
-        manifest-path: sdcard-formatter-flatpak/io.github.3ddruck12.SDCardFormatter.yaml
+        manifest-path: sdcard-formatter-flatpak/io.github.sdcardformatter.SDCardFormatter.yaml
         cache-key: flatpak-builder-${{ github.sha }}
         
     - name: Upload Flatpak artifact
