@@ -30,7 +30,7 @@ jobs:
     - name: Prepare DEB package structure
       run: |
         cd sdcard-formatter-deb
-        DEB_DIR="sdcard-formatter_1.0.5"
+        DEB_DIR="sdcard-formatter_1.0.6"
         
         # Copy GUI script
         cp ../sdcard-formatter-installer/bin/sd_formatter_gui.py "$DEB_DIR/usr/local/bin/"
@@ -51,18 +51,18 @@ jobs:
     - name: Build DEB package
       run: |
         cd sdcard-formatter-deb
-        dpkg-deb --build --root-owner-group sdcard-formatter_1.0.5
+        dpkg-deb --build --root-owner-group sdcard-formatter_1.0.6
         
     - name: Upload DEB artifact
       uses: actions/upload-artifact@v4
       with:
         name: sdcard-formatter-deb
-        path: sdcard-formatter-deb/sdcard-formatter_1.0.5.deb
+        path: sdcard-formatter-deb/sdcard-formatter_1.0.6.deb
         
     - name: Create Release
       if: startsWith(github.ref, 'refs/tags/v')
       uses: softprops/action-gh-release@v1
       with:
-        files: sdcard-formatter-deb/sdcard-formatter_1.0.5.deb
+        files: sdcard-formatter-deb/sdcard-formatter_1.0.6.deb
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
